@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin Chat</title>
+    <style>
+        /* Add your styles here */
+        /* Basic styles for the admin interface */
+    
+       
+
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { display: flex; width: 100vw; height: 100vh; }
+        .chat { width: 100%; display: flex; flex-direction: column; }
+        .chat-header { padding: 10px; border-bottom: 1px solid #ddd; display: flex; align-items: center; }
+        .chat-messages { flex: 1; padding: 20px; overflow-y: auto; background-color: #e5ddd5; }
+        .message { margin: 10px 0; }
+        .message.user { text-align: right; }
+        .message .message-text { display: inline-block; padding: 10px; border-radius: 8px; background-color: #dcf8c6; max-width: 60%; }
+        .message.user .message-text { background-color: #fff; }
+        .chat-input { display: flex; padding: 10px; border-top: 1px solid #ddd; }
+        .chat-input input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 20px; margin-right: 10px; outline: none; }
+        .chat-input button { padding: 10px 20px; border: none; background-color: #4CAF50; color: #fff; border-radius: 20px; cursor: pointer; transition: background-color 0.3s; }
+        .chat-input button:hover { background-color: #45a049; }
+    </style>
+</head>
+
+<!--HERE GOES THE NASHA HEADER-->
+<div id="header"></div>
+<body>
+    <main>
+        <div class="container">
+            <div class="chat">
+                <div class="chat-header">
+                    <h4>Admin Chat</h4>
+                </div>
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="Type a message">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+    <!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>>
+
+    <script src="loadHeader.js"></script>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:8080');
+
+        socket.addEventListener('message', function (event) {
+        const message = JSON.parse(event.data);
+        console.log('received:', message); // Debugging line
+        addMessageToChat(message.text, message.sender);
+    });
+
+
+    function sendMessage() {
+    const messageInput = document.getElementById('messageInput');
+    const message = messageInput.value;
+    const sender = document.querySelector('h4').innerText === 'Admin Chat' ? 'Admin' : 'Guest';
+
+    if (!message) return alert('Please enter a message.');
+
+    socket.send(JSON.stringify({
+        sender: sender,
+        text: message
+    }));
+
+    addMessageToChat(message, 'You');
+    messageInput.value = '';
+}
+
+
+    function addMessageToChat(message, sender) {
+    const chatMessages = document.getElementById('chatMessages');
+    const messageElement = document.createElement('div');
+    messageElement.className = 'message';
+    if (sender === 'You') {
+        messageElement.classList.add('user');
+    }
+    messageElement.innerHTML = `<div class="message-text">${message}</div>`;
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to the bottom
+}
+
+    </script>
+</body>
+</html>

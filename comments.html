@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave a Comment</title>
+    <link rel="stylesheet" href="MINE.css">
+    <style>
+
+
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .rating-group input {
+            margin-right: 5px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!--HERE GOES THE NASHA HEADER-->
+    <div id="header"></div>
+
+    <div class="title">
+        <h1>Leave a comment</h1>
+    </div>
+
+    <main id="main">
+        <div class="container">
+            <h1>Leave a Comment and Rating</h1>
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                </div>
+                <div class="form-group rating-group">
+                    <label>Rating:</label>
+                    <input type="radio" id="rating5" name="rating" value="5" required>
+                    <label for="rating5">5</label>
+                    <input type="radio" id="rating4" name="rating" value="4">
+                    <label for="rating4">4</label>
+                    <input type="radio" id="rating3" name="rating" value="3">
+                    <label for="rating3">3</label>
+                    <input type="radio" id="rating2" name="rating" value="2">
+                    <label for="rating2">2</label>
+                    <input type="radio" id="rating1" name="rating" value="1">
+                    <label for="rating1">1</label>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </main>
+    <!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>>
+
+    <script src="loadHeader.js"></script>
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your feedback!');
+            // Here you would normally handle form submission, e.g., send data to a server
+        });
+    </script>
+</body>
+</html>

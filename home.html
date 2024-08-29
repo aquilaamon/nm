@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NashaMinistries</title>
+    <link rel="stylesheet" href="MINE.CSS">
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+<!--HERE GOES THE NASHA HEADER-->
+    <div id="header"></div>
+
+    <main>
+        <span>
+            <div class="title">
+                <h1>Nasha Ministries</h1>
+            </div>
+        </span>
+
+        <div class="container">
+            <div class="hope">
+                <h1>Hope in Every Step</h1>
+                <p>Empowering communities through education and spiritual guidance.</p>
+                <a href="#" class="button">Join Us</a>
+            </div>
+    
+    
+            <div class="testimonial-section">
+                <div class="testimonial">
+                    <h2>What People Are Saying</h2>
+                    <blockquote>
+                        <span class="quote-icon">“</span>
+                        <br>
+                        This organization has transformed our <br>community and provided hope for the future.
+                        <br>
+                        <span class="quote-icon">”</span>
+                    </blockquote>
+                </div>
+            </div>
+    
+    
+    </main>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', function() {
+    const newsSlider = document.querySelector('.news-slider');
+    const cards = document.querySelectorAll('.card');
+    const next = document.getElementById('next');
+    const prev = document.getElementById('prev');
+
+    let currentIndex = 0;
+
+    next.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to the start
+        }
+        updateSliderPosition();
+    });
+
+    prev.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = cards.length - 1; // Loop back to the last card
+        }
+        updateSliderPosition();
+    });
+
+    function updateSliderPosition() {
+        const slideWidth = cards[0].clientWidth;
+        newsSlider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+    }
+});
+
+
+    </script>
+<!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding - Nasha Ministries</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="MINE.CSS">
+</head>
+<body>
+
+    <!--HERE GOES THE NASHA HEADER-->
+    <div id="header"></div>
+    <header1>
+        <div class="title">
+            <h1>Funding & Sponsorship Opportunities</h1>
+        </div>
+    </header1>
+    <main>
+        <section class="funding-option" id="debt-finance">
+            <i class="fas fa-university fa-2x"></i>
+            <h2>Debt Project Finance</h2>
+            <p>Partner with us through structured debt financing. Opportunities include lending, credit enhancements, and more.</p>
+            <ul>
+                <li>Banks and financial institutions</li>
+                <li>Insurance companies</li>
+                <li>Investment funds</li>
+            </ul>
+        </section>
+        <section class="funding-option" id="equity-finance">
+            <i class="fas fa-balance-scale fa-2x"></i>
+            <h2>Equity Finance</h2>
+            <p>Invest directly into our projects for a stake in the company and potential long-term returns.</p>
+            <ul>
+                <li>Equity investors</li>
+                <li>Venture capitalists</li>
+                <li>Angel investors</li>
+            </ul>
+        </section>
+        <section class="funding-option" id="donations">
+            <i class="fas fa-hand-holding-usd fa-2x"></i>
+            <h2>Donations</h2>
+            <p>Support our initiatives directly with one-time or recurring donations.</p>
+            <form id="donation-form" method="post" action="/funding">
+                <label for="amount">Donation Amount:</label>
+            
+                <a href="donate.php"><button type="submit">Donate</button></a>
+            </form>
+            <!--<form id="donation-form" action="/process-donation" method="POST">
+                <label for="amount">Donation Amount:</label>
+                <input type="text" id="amount" name="amount" required>
+              
+                <label for="mpesa-number">M-Pesa Number:</label>
+                <input type="text" id="mpesa-number" name="mpesa-number" required>
+              
+                <button type="submit">Donate</button>
+              </form>-->
+        </section>
+    </main>
+
+    <!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>
+</body>
+</html>

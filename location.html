@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Page</title>
+    <link rel="stylesheet" href="#styles.css">
+    <link rel="stylesheet" href="MINE.CSS">
+</head>
+<body class="location">
+
+      <!--HERE GOES THE NASHA HEADER-->
+    <div id="header"></div>
+
+    <div class="title">
+        <h1>We are located here</h1>
+    </div>
+    <main>
+        <div class="container">
+            <h1>Welcome To Our Location Page</h1>
+    
+            <div class="map-container">
+                <div class="map-title">Our Location</div>
+                <div id="worldMap" class="map"></div>
+            </div>
+        </div>
+
+        <div class="partners-summary">
+            <h2>Partner Distribution by Continent</h2>
+            <ul>
+                <li>Africa: KENYA</li>
+                
+            </ul>
+        </div>
+    </main>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <script>
+        // Initialize map
+        var map = L.map('worldMap').setView([0, 0], 2); // Center the map and set the zoom level
+
+        // Add a tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for partners
+        var partners = [
+            { "name": "Location (Bible College)", "lat": -1.0926003482568163, "lon": 35.8736895925845 },
+            
+            // Add more partners as needed
+        ];
+
+        partners.forEach(function(partner) {
+            L.marker([partner.lat, partner.lon])
+                .addTo(map)
+                .bindPopup(partner.name);
+        });
+    </script>
+
+    <!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>>
+
+    <script src="loadHeader.js"></script>
+
+</body>
+</html>

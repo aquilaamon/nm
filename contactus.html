@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="MINE.CSS">
+  
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <!--HERE GOES THE NASHA HEADER-->
+    <div id="header"></div>
+
+    <div class="title">
+        <h1>Mail To Us</h1>
+    </div>
+    <main class="container" id="main">
+
+        
+        <div class="container">
+            <div class="form-container">
+                <h2>Scholarships: Securing Success for Students</h2>
+                <p>Supportive Solutions for Students: Secure Your Future with Our Scholarships.</p>
+
+                <form id="contactForm" action="send_mail.php" method="POST">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                
+                
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                
+                    <label for="question">Question *</label>
+                    <textarea id="question" name="question" rows="4" required></textarea>
+                
+                    <input type="submit" value="Submit">
+                </form>
+                
+            </div>
+        </div>
+        
+            <div class="contact-info">
+                <h3>Nasha Ministries</h3>
+                <p>📍 Bible College</p>
+                <p>📞 +254703582784</p>
+                <p>📞 +254721339231</p>
+                <p>✉ nashaministries@gmail.com</p>
+            </div>
+        </div>
+        
+    </main>
+    <div>
+        <br><br>
+    </div>
+
+    <!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>
+
+</body>
+</html>

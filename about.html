@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="MINE.CSS">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+
+    </style>
+</head>
+
+<!--HERE GOES THE NASHA HEADER-->
+<div id="header"></div>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="title">
+            <h1>About Us</h1>
+        </div>
+
+        <div class="section1">
+            <div class="title1">
+                <span>
+                    <h1>Sponsor Kids to achieve their dreams</h1>
+                </span>
+    
+                <p>It's not that easy to achieve goals success without the right tools. Can you imagine a needy kid achieving his/her role without any support?
+                    <br>
+                    Transform lives with our sponsorship solutions.</p>
+            </div>
+
+            <div class="btn">
+                <a href="more.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="title">
+                <span>
+                    <h3>Explore new opportunities</h3>
+                </span>
+
+                <p>
+                    "Embrace the future with hope and see new possibilities unfold."
+                </p>
+            </div>
+
+            <div class="btn">
+                <a href="more.html">Explore our sponsorship options</a>
+            </div>
+        </div>
+
+        <div class="section3">
+            <span>
+                <p>Maximize Kids Potential in Their Era of Growth</p>
+            </span>
+        </div>
+
+        <section class="s_company_team" data-snippet="s_company_team">
+            <div class="scroll-arrow left" onclick="scrollLeft()">&#10094;</div>
+            <div class="container">
+                <div class="row s_nb_column_fixed">
+                    <!-- Add a wrapper to enable horizontal scrolling -->
+                    <div class="team-wrapper">
+                        <div class="member">
+                            <div class="memberid">
+                                <div class="image-wrapper" contenteditable="false">
+                                    <img alt="Mrs. Sialo Kianana" src="path/to/image.jpg" class="img-fluid rounded-circle mx-auto o_editable_media" loading="lazy" />
+                                </div>
+                                <div class="memberid2">
+                                    <h4>Meet Sialo Kianana, our Admin</h4>
+                                    <p class="short-desc">Meet Sialo Kianana, our Admin...</p>
+                                    <a href="javascript:void(0);" class="read-more">Read More</a>
+                                </div>
+                                <div class="memberid-details">
+                                    <p>Meet Sialo Kianana, our Admin. A passionate leader,
+                                        <br>she oversees our team of 100+ ideas and
+                                        <br>fosters a community of thousands of ideas.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="member">
+                            <div class="memberid">
+                                <div class="image-wrapper" contenteditable="false">
+                                    <img alt="Mr. John Doe" src="path/to/image.jpg" class="img-fluid rounded-circle mx-auto o_editable_media" loading="lazy" />
+                                </div>
+                                <div class="memberid2">
+                                    <h4>Raphael Ndemo</h4>
+                                    <p class="short-desc">Meet Raphael Ndemo, our Chair leader...</p>
+                                    <a href="javascript:void(0);" class="read-more">Read More</a>
+                                </div>
+                                <div class="memberid-details">
+                                    <p>Meet Raphael Ndemo, our Chair leader. A visionary leader,
+                                        <br>he guides our ministry to success and
+                                        <br>fosters a culture of innovation.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="member">
+                            <div class="memberid">
+                                <div class="image-wrapper" contenteditable="false">
+                                    <img alt="Mr. John Doe" src="path/to/image.jpg" class="img-fluid rounded-circle mx-auto o_editable_media" loading="lazy" />
+                                </div>
+                                <div class="memberid2">
+                                    <h4>Meet Elijah Nasha</h4>
+                                    <p class="short-desc">Meet Elijah Nasha, our Director...</p>
+                                    <a href="javascript:void(0);" class="read-more">Read More</a>
+                                </div>
+                                <div class="memberid-details">
+                                    <p>Meet Elijah Nasha, our Director. A visionary leader,
+                                        <br>he guides our ministry to success and
+                                        <br>fosters a culture of innovation.</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Add other members similarly -->
+        
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-arrow right" onclick="scrollRight()">&#10095;</div>
+        </section>
+        
+        <style>
+          
+        </style>
+        
+        <script>
+            function scrollLeft() {
+                const container = document.querySelector('.team-wrapper');
+                const member = container.querySelector('.member');
+                const memberWidth = member.offsetWidth + parseInt(window.getComputedStyle(member).marginRight);
+                container.scrollBy({ left: -memberWidth, behavior: 'smooth' });
+            }
+        
+            function scrollRight() {
+                const container = document.querySelector('.team-wrapper');
+                const member = container.querySelector('.member');
+                const memberWidth = member.offsetWidth + parseInt(window.getComputedStyle(member).marginRight);
+                container.scrollBy({ left: memberWidth, behavior: 'smooth' });
+            }
+        
+            document.addEventListener('DOMContentLoaded', function() {
+                var readMoreLinks = document.querySelectorAll('.read-more');
+        
+                readMoreLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        var memberDetails = this.parentElement.nextElementSibling;
+                        if (memberDetails.style.display === 'none' || memberDetails.style.display === '') {
+                            memberDetails.style.display = 'block';
+                            this.textContent = 'Read Less';
+                        } else {
+                            memberDetails.style.display = 'none';
+                            this.textContent = 'Read More';
+                        }
+                    });
+                });
+            });
+        </script>
+        
+    
+        
+    </main>
+
+    <!--HERE GOES THE NASHA FOOTERS-->
+    <div id="footer"></div>
+    <script src="common.js"></script>>
+
+    <script src="loadHeader.js"></script>
+    
+    
+</body>
+</html>
